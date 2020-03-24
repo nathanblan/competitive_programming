@@ -15,6 +15,9 @@ int main()  {
   cin >> X;
   double dy = Y - y;
   double dx = X - x;
+  if (y == Y || x == X) {
+    cout << "bruh the y/x coordinates you entered aren't possible" << endl;
+  }
 
   if ( dy > dx ) {
     newSquare = dy * dy;
