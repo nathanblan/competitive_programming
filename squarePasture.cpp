@@ -7,12 +7,12 @@ using namespace std;
 //given 4 points from a range of 1 to 10, each pair defining a rectangle, find the smallest square to incorporate them both into a singular new square
 //create points using a random generator funtion which enters each value as a x/y coordinate.
 int main()  {
-  int y, Y, x, X;
+  int x, y, X, Y;
   double newSquare;
-  cin >> y;
-  cin >> Y;
   cin >> x;
+  cin >> y;
   cin >> X;
+  cin >> Y;
   double dy = Y - y;
   double dx = X - x;
   if (y == Y || x == X) {
