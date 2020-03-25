@@ -25,17 +25,18 @@ int main()  {
 
   int lowestX = min(x1, X1);
   int lowestY = min(y1, Y1);
-  int greatestX = max(x1, X2);
-  int greatestY = max(y1, Y2);
+  int greatestX = max(x2, X2);
+  int greatestY = max(y2, Y2);
 
-  double dX = greatestX - lowestY;
-  double dY = greatestY - lowestY;
+  int dX = greatestX - lowestX;
+  int dY = greatestY - lowestY;
 
-  double newSquare;
+  int newSquare;
   if ( dY > dX ) {
     newSquare = dY * dY;
   }
-  newSquare = dX * dX;
+  else {newSquare = dX * dX;
+  }
   cout << newSquare << endl;
 }
 //subtract lowest y value from highest y value
