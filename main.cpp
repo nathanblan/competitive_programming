@@ -9,7 +9,7 @@ int main()
     double num1,num2;
     char operation,redo;
     //--------Printing my name on screen----------------
-    cout<<"Welcome to the calculater program v.1.0 written by Your Name"<<endl;
+    cout<<"Welcome to the calculater program v.1.0 written by Nathan Lan"<<endl;
     cout<<"***************************************************************"<<endl;
     cout<<endl<<endl<<endl;
     //--here do loop is used so that the program can be used more then one time
