@@ -11,12 +11,14 @@ The last line specifies the number of platinum participants before and after the
 output three lines, each with a single int
 line 1 = bronze to silver, 2 = silver to gold, and 3 = gold to plat
 promoteToPlat = plat2 -plat1, stuckInGold = gold1 - promoteToPlat, promoteToGold = gold2 - stuckInGold, stuckInSilver = silver1 - promoteToGold, promoteToSilver = silver1 - stuckInSilver*/
-int plat1, plat2, gold1, gold2, silver1, silver2, stuckInGold, stuckInSilver,promoteToGold, promoteToPlat, promoteToSilver;
+int plat1, plat2, gold1, gold2, silver1, silver2, bronze1, bronze2, stuckInGold, stuckInSilver,promoteToGold, promoteToPlat, promoteToSilver, stuckInBronze;
 
 int main() {
-  cin>> plat1 >> plat2;
-  cin>> gold1 >> gold2;
+  cin>> bronze1 >> bronze2;
   cin>> silver1 >> silver2;
+  cin>> gold1 >> gold2;
+  cin>> plat1 >> plat2;
+
   promoteToPlat = plat2 - plat1;
   stuckInGold = gold1 - promoteToPlat;
   promoteToGold = gold2 - stuckInGold;
