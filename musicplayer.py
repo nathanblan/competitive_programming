@@ -1,0 +1,22 @@
+from pygame import mixer
+
+#start mixer
+mixer.init()
+
+#load song, set volume, play
+mixer.music.load("song.mp3")
+mixer.music.set_volume(0.7)
+mixer.music.play()
+
+while True:
+    print ("Press 'p' to pause 'r' to resume ")
+    print ("press e to exit program")
+    query = input (">>> ")
+
+    if query == 'p':
+        mixer.music.pause()
+    elif query == 'r':
+        mixer.music.unpause()
+    elif query == 'e':
+        mixer.music.stop()
+        break
