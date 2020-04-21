@@ -1,5 +1,7 @@
+#this is incompatabile if you do not have pygames installed. I also can't seem to install so who knows if this works lol
 from pygame import mixer
 
+pygame.music.init()
 #start mixer
 mixer.init()
 
