@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+//needs to be rewritten in C++, this is C code. Use cin and cout instead.
 int main() {
   int n, rev = 0, remainder;
   printf("Enter an integer: ");
