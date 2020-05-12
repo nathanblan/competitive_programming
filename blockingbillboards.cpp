@@ -3,7 +3,7 @@ using namespace std;
 
 int main() {
   //create an array as the range of values the bill boards can be in
-  int canvas [2000][2000] = 0;
+  int canvas [2000][2000] = 2;
   //create array with values of bill board 1 which is nested in canvas
   for (int i = leftx; i < rightx; i++) {
     for (int j = bottomy; j < topy; j++) {
