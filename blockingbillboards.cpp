@@ -4,12 +4,9 @@ using namespace std;
 int leftx, bottomy, rightx, topy, leftx2, bottomy2, rightx2, topy2, leftTruckX, rightTruckX, bottomTruckY, topTruckY;
 
 int main() {
-  cin >> leftx >> bottomy;
-  cin >> rightx >> topy;
-  cin >> leftx2 >> bottomy2;
-  cin >> rightx2 >> topy2;
-  cin >> leftTruckX >> rightTruckX;
-  cin >> bottomTruckY>> topTruckY;
+  cin >> leftx >> bottomy >> rightx >> topy;
+  cin >> leftx2 >> bottomy2 >> rightx2 >> topy2;
+  cin >> leftTruckX >> rightTruckX >> bottomTruckY>> topTruckY;
 
   //create an array as the range of values the bill boards can be in
   int range [500][500];
