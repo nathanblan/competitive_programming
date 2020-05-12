@@ -12,9 +12,9 @@ int main() {
   cin >> bottomTruckY>> topTruckY;
 
   //create an array as the range of values the bill boards can be in
-  int range [2001][2001];
-  for (int i = 0; i < 2001; i++) {
-    for (int j = 0; j < 2001; j++) {
+  int range [500][500];
+  for (int i = 0; i < 500; i++) {
+    for (int j = 0; j < 500; j++) {
       range[i][j] = 0;
         }
       }
@@ -35,8 +35,8 @@ int main() {
   }
 
   int visible = 0;
-  for (int i = 0; i < 2001; i++) {
-    for (int j = 0; j < 2001; j++) {
+  for (int i = 0; i < 500; i++) {
+    for (int j = 0; j < 500; j++) {
       if (range[i][j] == 1) {
         visible += 1;
       }
