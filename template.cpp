@@ -1,6 +1,6 @@
 #include<iostream>
 #include<fstream>
-#include<math.h>
+#include<cmath>
 #include<algorithm>
 #include<vector>
 #include<queue>
@@ -9,5 +9,5 @@
 using namespace std;
 
 int main() {
-  
+
 }
