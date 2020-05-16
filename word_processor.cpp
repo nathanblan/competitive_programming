@@ -26,6 +26,7 @@ int main() {
       j++;
       if (text_length.size() > K) {
         cout << return_text << endl;
+        text_length.clear();
         i = j;
       }
       else {
