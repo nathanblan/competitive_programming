@@ -4,48 +4,56 @@
 #include<fstream>
 
 using namespace std;
-using ll = long long;
 
 //ifstream fin("x.in");
 //ofstream fout("x.out");
 
-int main() {
-  ll K, N;
-  cin >> K >> N;
-  vector<vector<11>> A(K, vector<11>(N, 0));
-  for (ll i = 0; i < K; i++) {
-    for (ll j = 0; j < N; j++) {
-      cin << A[K][N];
+int mat[100][100];
+int ranks[100][100];
+int n, k;
+bool compare(int a, int b){
+  for(int w=1;w<=k;w++){
+    if(ranks[a][w]<ranks[b][w]) {
+      continue;
+    }
+    else {
+      return false;
     }
   }
-  ll ans = 0;
-  for (ll i = 1; i <= N; i++) {
-    for (ll j = i+1; j <= N; j++) {
-      bool ij = false;
-      bool ji = false;
-      for (ll k = 1; k < K; k++) {
-        ll pi = -1;
-        ll pj = -1;
-        for (ll l = -; l < n; l++) {
-          if (A[k][l] == i) {
-            pi = 1;
-          }
-          if (A[k][l] == j) {
-            pj = 1;
-          }
-        }
-        assert(pi >= 0 && pj >= 0 && pi!pj);
-        if (pi > pj) {
-          ij = true;
-        } eles {
-          ji = true;
-        }
+  return true;
+}
+bool compare1(int a, int b){
+  for(int w=1;w<=k;w++){
+    if(ranks[a][w]>=ranks[b][w]) {
+      continue;
+    }
+    else {
+      return false;
+    }
+  }
+  return true;
+}
+int main(){
+  ifstream cin("gymnastics.in");
+  ofstream cout("gymnastics.out");
+  cin >> k>> n;
+  for(int i=1;i<=k;i++){
+    for(int j=1;j<=n;j++){
+      int x;
+      cin >> x;
+      ranks[x][i]=j;
+    }
+  }
+  int count=0;
+  for(int i=1;i<=n;i++){
+    for(int j=i+1;j<=n;j++){
+      if(compare(i, j)){
+        count++;
       }
-      assert(ij || ji);
-      if (ij ^ ji) {
-        ans++;
+      else if(compare1(i, j)){
+        count++;
       }
     }
   }
-  cout << ans << endl;
+  cout << count << endl;
 }
