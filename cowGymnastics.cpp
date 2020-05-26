@@ -5,8 +5,8 @@
 
 using namespace std;
 
-//ifstream fin("x.in");
-//ofstream fout("x.out");
+ifstream fin("x.in");
+ofstream fout("x.out");
 
 int mat[100][100];
 int ranks[100][100];
