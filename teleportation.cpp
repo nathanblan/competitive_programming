@@ -5,7 +5,7 @@ using namespace std;
 int a, b, x, y;
 //store distance calculations
 //int d1, d2;
-int teleporter, noTeleporter, teleportFinal;
+int teleporter, noTeleporter, teleporter2, teleportFinal;
 
 int main() {
   freopen("teleport.in", "r", stdin);
@@ -14,7 +14,7 @@ int main() {
 
   teleporter = abs(a-x) + abs(b-y);
   teleporter2 = abs(a-y) + abs(b-x);
-  noTeleporter = b - a;
+  noTeleporter = max(a, b) - min(a, b);
   teleportFinal = min(teleporter, teleporter2);
   if (teleportFinal <= noTeleporter) {
     cout << teleportFinal << endl;
