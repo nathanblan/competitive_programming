@@ -7,14 +7,15 @@ int a, b, x, y;
 int d1, d2;
 
 int main() {
-  fin teleport.in;
-  fout teleport.out;
+  freopen("teleport.in", "r", stdin);
+  freopen("teleport.out", "w", stdout);
+  cin >> a >> b >> x >> y;
   if (max(a, b) - min(a, b) > max(x, y) - min(x, y)); {
     d1 = max(min(a, b), min(x, y)) - min(min(a, b), min(x, y));
     d2 = max(max(a, b), max(x, y)) - min(max(a, b), max(x, y));
-    return d1 + d2;
+    cout << d1 + d2 << endl;
   }
   else {
-    return max(a, b) - min(a, b);
+    cout << max(a, b) - min(a, b) << endl;
   }
 }
