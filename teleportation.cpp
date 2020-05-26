@@ -10,7 +10,9 @@ int main() {
   freopen("teleport.in", "r", stdin);
   freopen("teleport.out", "w", stdout);
   cin >> a >> b >> x >> y;
-  if (max(a, b) - min(a, b) > max(x, y) - min(x, y)); {
+  int haulDistance = max(a, b) - min(a, b), teleportDistance = max(x, y) - min(x, y);
+
+  if ( haulDistance >= teleportDistance) {
     d1 = max(min(a, b), min(x, y)) - min(min(a, b), min(x, y));
     d2 = max(max(a, b), max(x, y)) - min(max(a, b), max(x, y));
     cout << d1 + d2 << endl;
