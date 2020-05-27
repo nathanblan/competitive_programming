@@ -2,7 +2,42 @@
 
 using namespace std;
 
-int a, b, c;
+int main() {
+  int a, b, c;
+  int longTime, shortTime;
+  freopen("herding.in", "r", stdin);
+  freopen("herding.out", "w", stdout);
+  cin >> a >> b >> c;
+  int cows[3];
+  cows[0] = a;
+  cows[1] = b;
+  cows[2] = c;
+  sort(cows, cows+3);
+
+  /*for (int i = 0; i < 3; i++) {
+    cout << cows[i] << endl;
+  }*/
+
+  //reset values to the sorted array
+  a = cows[0], b = cows[1], c = cows[2];
+  //shortTime
+  if (b == a+1 && c == b+1) {
+    cout << 0 << endl;
+  }
+  else {
+    if (b==a+2 || b == c-2) {
+      cout << 1 << endl;
+    } else {
+      cout << 2 << endl;
+    }
+  }
+
+  // longTime
+  longTime = max(b-a, c-b) - 1;
+  cout << longTime << endl;
+}
+
+/*int a, b, c;
 int bestTime, worstTime;
 
 int main() {
@@ -84,4 +119,4 @@ int main() {
       }
     }
   }
-}
+} */
