@@ -21,19 +21,19 @@ int main() {
   cows[2] = cNew;
   sort(cows, cows+3);
 
-  int aNew = cows[0], bNew = cows[1], cNew = cows[2];
+  aNew = cows[0], bNew = cows[1], cNew = cows[2];
   while (!inOrder) {
     cNew = (aNew + bNew)/2;
     if (bNew == aNew+1 && cNew == b+1) {
       cout << bestTime << endl;
       inOrder = true;
     } else {
-      sort(cows, cows+n);
+      sort(cows, cows+3);
       bestTime++;
     }
   }
   //worstTime
-  int cows[3];
+  cows[3];
   cows[0] = a;
   cows[1] = b;
   cows[2] = c;
@@ -50,19 +50,19 @@ int main() {
         inOrder2 = true;
       } else {
         a = b+1;
-        sort(cows, cows+n);
+        sort(cows, cows+3);
         worstTime++;
       }
     }
   } else {
     while (!inOrder2) {
-      int a = cows[0], b = cows[1], c = cows[2];
+      a = cows[0], b = cows[1], c = cows[2];
       if (b == a+1 && c == b+1) {
         cout << worstTime << endl;
         inOrder2 = true;
       } else {
         c = b-1;
-        sort(cows, cows+n);
+        sort(cows, cows+3);
         worstTime++;
       }
     }
