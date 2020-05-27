@@ -6,8 +6,8 @@ int a, b, c;
 int bestTime, worstTime;
 
 int main() {
-  freopen("herding.in", "r", stdin);
-  freopen("herding.out", "w", stdout);
+  //freopen("herding.in", "r", stdin);
+  //freopen("herding.out", "w", stdout);
   cin >> a >> b >> c;
   bool inOrder = false;
   bool inOrder2 = false;
@@ -21,17 +21,34 @@ int main() {
   cows[2] = cNew;
   sort(cows, cows+3);
 
-  aNew = cows[0], bNew = cows[1], cNew = cows[2];
-  while (!inOrder) {
-    cNew = (aNew + bNew)/2;
-    if (bNew == aNew+1 && cNew == b+1) {
-      cout << bestTime << endl;
-      inOrder = true;
-    } else {
-      sort(cows, cows+3);
-      bestTime++;
+  int pair1 = bNew-aNew;
+  int pair2 = cNew-bNew;
+  if (pair1 < pair2) {
+    aNew = cows[0], bNew = cows[1], cNew = cows[2];
+    while (!inOrder) {
+      cNew = (aNew + bNew)/2;
+      if (bNew == aNew+1 && cNew == bNew+1) {
+        cout << bestTime << endl;
+        inOrder = true;
+      } else {
+        sort(cows, cows+3);
+        bestTime++;
+      }
+    }
+  } else {
+    aNew = cows[0], bNew = cows[1], cNew = cows[2];
+    while (!inOrder) {
+      aNew = (bNew + cNew)/2;
+      if (bNew == aNew+1 && cNew == bNew+1) {
+        cout << bestTime << endl;
+        inOrder = true;
+      } else {
+        sort(cows, cows+3);
+        bestTime++;
+      }
     }
   }
+
   //worstTime
   cows[3];
   cows[0] = a;
@@ -40,8 +57,8 @@ int main() {
   sort(cows, cows+3);
 
   //evalutate for pos c
-  int pair1 = b-a;
-  int pair2 = c-b;
+  pair1 = b-a;
+  pair2 = c-b;
   if (pair1 < pair2) {
     while (!inOrder2) {
       int a = cows[0], b = cows[1], c = cows[2];
