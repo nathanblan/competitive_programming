@@ -6,8 +6,8 @@ int a, b, c;
 int bestTime, worstTime;
 
 int main() {
-  freopen("teleport.in", "r", stdin);
-  freopen("teleport.out", "w", stdout);
+  freopen("herding.in", "r", stdin);
+  freopen("herding.out", "w", stdout);
   cin >> a >> b >> c;
   bool inOrder = false;
   bool inOrder2 = false;
