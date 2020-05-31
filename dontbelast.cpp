@@ -44,7 +44,7 @@ for (int i = 0; i < 7; i++) {
 //find smallest values, set them to an absurdly high amount
   for (int i = 0; i < 7; i++) {
     if (min1 == cows[i]) {
-      cows[i]=101;
+      cows[i]=200;
     }
 //    min1=min(min1, cows[i]);
   }
