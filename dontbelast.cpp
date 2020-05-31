@@ -34,13 +34,19 @@ int main() {
     if (tempn == "Henrietta") cows[6] += tempc;
   }
 
-  int min1 = 101, checkRepeat;
+//use a method that returns the smallest value in the array, then assign it to min1
+int minValue = 101;
+for (int i = 0; i < 7; i++) {
+    minValue=min(minValue, cows[i]);
+  }
+
+  int min1 = minValue;
 //find smallest values, set them to an absurdly high amount
   for (int i = 0; i < 7; i++) {
-    min1=min(min1, cows[i]);
     if (min1 == cows[i]) {
       cows[i]=101;
     }
+    min1=min(min1, cows[i]);
   }
 //find the new smallest values, assign the a cow to it, make them super large so we can check for repeat
   min1 = 101;
@@ -48,23 +54,14 @@ int main() {
   for (int i = 0; i < 7; i++) {
     min1=min(min1, cows[i]);
     if (min1 == cows[i]) {
-      checkRepeat = cows[i];
+//      checkRepeat = cows[i];
       cowName = i;
       cows[i] = 101;
+      count++;
     }
   }
-//check repeat by
-  min1 = 101;
-  for (int i = 0; i < 7; i++) {
-    min1=min(min1, cows[i]);
-    if (min1 == cows[i]) {
-      if (min1 == checkRepeat) {
-        cout << "Tie" << endl;
-        break;
-      }
-    }
-  }
-  if (min1 != checkRepeat) {
+
+  if (count == 1) {
     if (cowName == 0) cout << "Bessie" << endl;
     if (cowName == 1) cout << "Elsie" << endl;
     if (cowName == 2) cout << "Daisy" << endl;
@@ -73,7 +70,20 @@ int main() {
     if (cowName == 5) cout << "Maggie" << endl;
     if (cowName == 6) cout << "Henrietta" << endl;
   }
+  else {
+    cout << "Tie" << endl;
+  }
 }
 
 //String Bessie, Elsie, Daisy, Gertie, Annabelle, Maggie, and Henrietta;
 //string cows[7] = {/*"Bessie", "Elsie", "Daisy", "Gertie", "Annabelle", "Maggie", "Henrietta"*/};
+/*  min1 = 101;
+  for (int i = 0; i < 7; i++) {
+    min1=min(min1, cows[i]);
+    if (min1 == cows[i]) {
+      if (min1 == checkRepeat) {
+        cout << "Tie" << endl;
+        break;
+      }
+    }
+  }*/
