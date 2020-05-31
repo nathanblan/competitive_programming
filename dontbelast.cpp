@@ -46,17 +46,21 @@ for (int i = 0; i < 7; i++) {
     if (min1 == cows[i]) {
       cows[i]=101;
     }
-    min1=min(min1, cows[i]);
+//    min1=min(min1, cows[i]);
   }
 //find the new smallest values, assign the a cow to it, make them super large so we can check for repeat
-  min1 = 101;
+minValue = 101;
+for (int i = 0; i < 7; i++) {
+    minValue=min(minValue, cows[i]);
+  }
+  min1 = minValue;
   int count = 0;
   for (int i = 0; i < 7; i++) {
-    min1=min(min1, cows[i]);
+//    min1=min(min1, cows[i]);
     if (min1 == cows[i]) {
 //      checkRepeat = cows[i];
       cowName = i;
-      cows[i] = 101;
+//      cows[i] = 101;
       count++;
     }
   }
