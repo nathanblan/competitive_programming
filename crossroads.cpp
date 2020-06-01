@@ -8,8 +8,9 @@ using namespace std;
 int main() {
   freopen("crossroad.in", "r", stdin);
   freopen("crossroad.out", "w", stdout);
-  int N, side;
-  int index[9]; //array to store cows values
+  
+  int N, cow, side;
+  int index[10]; //array to store cows values
   index[0] ;
   index[1] ;
   index[2] ;
@@ -28,79 +29,136 @@ int main() {
   bool f = false;
   bool g = false;
   bool h = false;
-  bool i = false;
   bool j = false;
+  bool k = false;
 
   cin >> N; //define amount of sightings
+  int total = 0;
 
   for (int i=0; i<N; i++) { //go through the list
-    cin >> index >> side;
-    switch(index){ //use cases to check which cow has been sighted and assign the first value
+    cin >> cow >> side;
+  /*  if (cow == 3) {
+      if (a) {//skip on first sighting, run on second
+        if (abs(index[2]-side)==1) {// check if crossroad
+          total++; //if did cross road, increment total crossings
+        }
+      }
+      index[2]=side; //assign the first side of the cow
+      a = true; //lets us know weve seen this cow
+      //cout << "case3 ran" << endl;
+      //break;
+    }
+    if (cow == 4) {
+      if (d) {
+        if (abs(index[3]-side)==1) {
+          total++;
+          cout << "increment4" <<endl;
+        }
+      }
+      index[3]=side;
+      d = true;
+      cout << "case4 ran" << endl;
+      //break;
+    } */
+
+    switch(cow){ //use cases to check which cow has been sighted and assign the first value
       case 1:
-        if (a) {
-          if (abs(index[i]-side)==1) {
-            total++;
-            break;
+        if (a) {//skip on first sighting, run on second
+          if (abs(index[0]-side)==1) {// check if crossroad
+            total++; //if did cross road, increment total crossings
           }
-        }//break; //if weve already seen this cow, break
+        }
         index[0]=side; //assign the first side of the cow
-        bool a = true; //lets us know weve seen this cow
+        a = true; //lets us know weve seen this cow
         break;
       case 2:
-        if (b) break;
+        if (b) {
+          if (abs(index[1]-side)==1) {
+            total++;
+          }
+        }
         index[1]=side;
-        bool a = true;
+        b = true;
         break;
       case 3:
-        if (c) break;
+        if (c) {
+          if (abs(index[2]-side)==1) {
+            total++;
+            //cout << "increment3" <<endl; testing
+          }
+        }
         index[2]=side;
-        bool a = true;
+        c = true;
         break;
       case 4:
-        if (d) break;
+        if (d) {
+          if (abs(index[3]-side)==1) {
+            total++;
+            //cout << "increment4" <<endl; testing
+          }
+        }
         index[3]=side;
-        bool d = true;
+        d = true;
         break;
       case 5:
-        if (e) break;
+        if (e) {
+          if (abs(index[4]-side)==1) {
+            total++;
+          }
+        }
         index[4]=side;
-        bool e = true;
+        e = true;
         break;
       case 6:
-        if (f) break;
+      if (f) {
+          if (abs(index[5]-side)==1) {
+            total++;
+          }
+        }
         index[5]=side;
-        bool f = true;
+        f = true;
         break;
       case 7:
-        if (g) break;
+        if (g) {
+          if (abs(index[6]-side)==1) {
+            total++;
+          }
+        }
         index[6]=side;
-        bool g = true;
+        g = true;
         break;
       case 8:
-        if (h) break;
+        if (h) {
+          if (abs(index[7]-side)==1) {
+            total++;
+          }
+        }
         index[7]=side;
-        bool h = true;
+        h = true;
         break;
       case 9:
-        if (i) break;
+        if (j) {
+          if (abs(index[8]-side)==1) {
+            total++;
+          }
+        }
         index[8]=side;
-        bool i = true;
+        j = true;
         break;
       case 10:
-        if (j) break;
+        if (k) {
+          if (abs(index[9]-side)==1) {
+            total++;
+          }
+        }
         index[9]=side;
-        bool j = true;
+        k = true;
         break;
-      default:
-        cout << "no valid cases"<< endl;
       }
     }
 
-    int total = 0;
-    for (int i=0; i<N; i++) {
-      if ()
-    }
-
+    cout << total << endl;
+  }
   /*
   TRY THIS: setting all the values to nothing in the array, then let the loop insert first values from cin
 
@@ -120,4 +178,3 @@ int main() {
   cin x y
   for i < n
   */
-}
