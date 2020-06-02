@@ -42,11 +42,11 @@ int main() {
   copy[5] = cows[5];
   copy[6] = cows[6];
   sort(copy, copy+7); //sort array to find smallest value.
-  int min = copy[0]; //first minimum
+  int min1 = copy[0]; //first minimum
 
   for (int i = 0; i < 7; i++) { //using the minimum, test if a cow is equal to it, then set it to over 9000
-    if (cows[i] == min) { // if cow at index = minimum
-      cows[i] = 420; //set to arbitrarily high value... hehe
+    if (cows[i] == min1) { // if cow at index = minimum
+      cows[i] = 4206969; //set to arbitrarily high value... hehe
       //copy[i] = cows[i]; //set copy of cows to match that value
     }
   }
@@ -58,13 +58,13 @@ int main() {
   copy[5] = cows[5];
   copy[6] = cows[6];
   sort(copy, copy+7); //sort new array to find second smallest value.
-  min = copy[0]; //second minimum
+  min1 = copy[0]; //second minimum
 
   int index;
   int count = 0;
   //FIND A WAY TO TELL IF THERE ARE MORE THAN ONE SECOND LEAST
   for (int i = 0; i < 7; i++) { //using the minimum, test if a cow is equal to it, then return it
-    if (cows[i] == min) { // if cow at index = minimum
+    if (cows[i] == min1) { // if cow at index = minimum
       count++;//increments upon finding a match, and if count > 1 (or having only one match), then print tie
       index = i;//return the cow at this position
     }
