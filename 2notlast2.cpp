@@ -22,7 +22,7 @@ int main() {
 
   string name;
   int tempc;
-  for (int i = 0; i < N; i++) {
+  for (int i = 0; i < N; i++) {//get the inout from notlast.in, and increment each cower respectively to get M amount of milk for each cow
     cin >> name >> tempc;
     if (name == "Bessie") cows[0] += tempc;
     if (name == "Elsie") cows[1] += tempc;
@@ -46,11 +46,11 @@ int main() {
 
   for (int i = 0; i < 7; i++) { //using the minimum, test if a cow is equal to it, then set it to over 9000
     if (cows[i] == min) { // if cow at index = minimum
-      cows[i] = 420; //set to arbitrarily high value
+      cows[i] = 420; //set to arbitrarily high value... hehe
       //copy[i] = cows[i]; //set copy of cows to match that value
     }
   }
-  copy[0] = cows[0];
+  copy[0] = cows[0]; //new array with updated values
   copy[1] = cows[1];
   copy[2] = cows[2];
   copy[3] = cows[3];
@@ -65,12 +65,12 @@ int main() {
   //FIND A WAY TO TELL IF THERE ARE MORE THAN ONE SECOND LEAST
   for (int i = 0; i < 7; i++) { //using the minimum, test if a cow is equal to it, then return it
     if (cows[i] == min) { // if cow at index = minimum
-      count++;
+      count++;//increments upon finding a match, and if count > 1 (or having only one match), then print tie
       index = i;//return the cow at this position
     }
   }
 
-  if (count == 1) {
+  if (count == 1) { //if theres only one cow then match and print that cow
     if (index == 0) cout << "Bessie" << endl;
     if (index == 1) cout << "Elsie" << endl;
     if (index == 2) cout << "Daisy" << endl;
@@ -79,7 +79,7 @@ int main() {
     if (index == 5) cout << "Maggie" << endl;
     if (index == 6) cout << "Henrietta" << endl;
   }
-  else {
+  else { //if count > 1 (or having only one match), then print tie
     cout << "Tie" << endl;
   }
 }
