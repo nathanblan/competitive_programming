@@ -35,7 +35,7 @@ int main() {
   }
 
 //use a method that returns the smallest value in the array, then assign it to min1
-int minValue = 101;
+int minValue = 4206969;
 for (int i = 0; i < 7; i++) {
     minValue=min(minValue, cows[i]);
   }
@@ -44,7 +44,7 @@ for (int i = 0; i < 7; i++) {
 //find smallest values, set them to an absurdly high amount
   for (int i = 0; i < 7; i++) {
     if (min1 == cows[i]) {
-      cows[i]=200;
+      cows[i]=4206969;
     }
 //    min1=min(min1, cows[i]);
   }
