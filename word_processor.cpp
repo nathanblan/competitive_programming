@@ -1,10 +1,5 @@
-#include<iostream>
-#include<fstream>
-#include<cmath>
-#include<algorithm>
-#include<vector>
-#include<queue>
-#include<string>
+
+#include <bits/stdc++.h>
 
 using namespace std;
 
