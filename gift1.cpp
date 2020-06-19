@@ -27,7 +27,7 @@ int main() {
     int app = (amount - (amount%people)) / people //app = amount per person
     for (int j=0;j<people;j++) {
       cin >> name;
-      if
+      if (name == )
     }
   }
   /*for (int i = 0; i < NP; i++) {
