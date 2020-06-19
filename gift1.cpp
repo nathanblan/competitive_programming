@@ -9,16 +9,15 @@ using namespace std;
 
 int NP;
 int amount, people;
-string name, giver;
-vector<string> names;
-vector<string> totals;
+string name, gifted, giver;
+map<string,int> names;
 int main() {
 //  freopen("gift1.in", "r", stdin);
 //  freopen("gift1.out", "w", stdout);
   cin >> NP; //number of friends
-  for (int i=0; i<NP; i++) {//take the name of everyone at the party and assign them to a vector
+  for (int i=0;i<NP;i++) {// create a map with index of names
     cin >> name;
-    names.push_back(name);//names will be accesed later for matching amounts to the person
+    names[name] = 0;//set to 0, add with each transaction
   }
   //NP groups of people with gift assignments, iterate to complete each transaction
   for (int i=0; i<NP; i++) {
@@ -26,13 +25,13 @@ int main() {
     cin >> amount >> people;
     int app = (amount - (amount%people)) / people //app = amount per person
     for (int j=0;j<people;j++) {
-      cin >> name;
-      if (name == )
+      cin >> gifted;
+      names[gifted] += app;
     }
+    names[giver] += ((amount%people) - amount);
   }
-  /*for (int i = 0; i < NP; i++) {
-    cout << names[i] << endl;
-  }*/
+  for (i = 0; i < NP; i++)
+    cout << names[i] + amount[i] << endl;
 }
 /*
 cin amount of people NP
@@ -47,6 +46,6 @@ if amount > 0
   for recipients
     add amount per person to each person
 
-for (i = 0; i < amount of people; i++
+for (i = 0; i < amount of people; i++)
   cout << name[i] and amount[i] << endl;
 */
