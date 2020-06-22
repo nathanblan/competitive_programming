@@ -1,4 +1,8 @@
-//friday USACO Training site
+/*
+ID: nathanb2
+TASK: friday
+LANG: C++
+*/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -6,12 +10,21 @@ using namespace std;
 int N; //number of years
 int week_day[7] = {0, 0, 0, 0, 0, 0, 0}; //array containing each day to store number of occurances of the 13th on that day
 int day = 0; //day of week from 0 to 7, 0 being monday
-void count13(int days_in_month);
-
+void count13(int days_in_month) {
+  for (int date=1; date < days_in_month +1; date++) { // for the days in a month
+    if (date == 13) {
+      week_day[day] += 1;
+    } //array[day] takes the current day (from 0 to 6) and adds one to that day
+    day++;
+    if (day == 7) {
+      day = 0;
+    }
+  }
+}
 
 int main() {
-  //freopen("friday.in", "r", stdin);
-  //freopen("friday.out", "w", stdout);
+  freopen("friday.in", "r", stdin);
+  freopen("friday.out", "w", stdout);
 
   cin >> N;
   int year = 1900;
@@ -75,22 +88,18 @@ int main() {
     }
   year++;
   }
-  for (int i=0; i<7; i++) {
-    
-    cout << week_day[i] + " "<< endl;
+  int array[7];
+  array[0] = week_day[5];
+  array[1] = week_day[6];
+  array[2] = week_day[0];
+  array[3] = week_day[1];
+  array[4] = week_day[2];
+  array[5] = week_day[3];
+  array[6] = week_day[4];
+  for (int i=0; i<6; i++) {
+      cout << array[i] << " ";
   }
-}
-
-void count13(int days_in_month) {
-  for (int date=0; date < days_in_month; date++) { // for the days in a month
-    if (date == 13) {
-      week_day[day] += 1;
-    } //array[day] takes the current day (from 0 to 6) and adds one to that day
-    day++;
-    if (day == 7) {
-      day = 0;
-    }
-  }
+  cout << array[6] <<endl;
 }
 /*
 int count13(days_in_month) {
