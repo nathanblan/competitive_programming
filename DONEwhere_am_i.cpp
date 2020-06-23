@@ -3,7 +3,7 @@
 using namespace std;
 
 int N;
-int min_K = 0;
+int max_K = 0;
 string text, sub;
 
 int main() {
@@ -13,22 +13,23 @@ int main() {
   cin >> text;
 
   for (int i = 0; i < N; i++) {
-    for (int K = 1; K <= N - i; K++) {
+    for (int K = 1; K <= N-i; K++) {
       sub = text.substr(i, K);
       if (sub.length() != 1) {
         int found = text.find(sub, 0);
         found = text.find(sub, found+1);
-        if (found == string::npos) {
-          min_K = K;
+        if (found != string::npos) { //finds second instance of the substr
+          if (K > max_K) {
+            max_K = K;
+          }
         }
       }
     }
   }
-  cout << min_K << endl;
+  cout << max_K+1 << endl;
 }
 
 /*
-single char don't count
-if (sub.length() == 1)
-find the minimum K that works for each by storing min K in a variable
+(max K that has a repetion)+1
+
 */
